@@ -1,0 +1,50 @@
+.input_container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+
+.input_wrap {
+    width: 336px;
+    position: relative;
+}
+
+.header_input {
+    max-width: 336px;
+    height: 28px;
+    border: 0;
+    border-bottom: 0.5px solid;
+    margin-right: 10px;
+    background-color: transparent;
+    border-color: white;
+    color: white;
+    outline: none;
+}
+
+.header_input::placeholder {
+    color: rgb(153, 151, 151);
+}
+
+.input_icon {
+    stroke: #ffffff;
+    position: absolute;
+    right: 40%;
+    top: 40%;
+}
+
+.submit_button {
+    min-width: 100px;
+    padding: 5px 3px;
+    border: 1px solid transparent;
+    border-radius: 5px;
+    color: #fff;
+    border-color: #e5e5e5;
+    background-color: transparent;
+    outline: none;
+}
+  
+.submit_button:hover {
+    background-color: #ff6b08;
+}

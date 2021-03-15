@@ -1,0 +1,11 @@
+.header {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-image: linear-gradient(
+      to right,
+      rgba(0, 0, 0, 0.56),
+      rgba(0, 0, 0, 0.56)
+    ),
+    url('./hed.jpg');
+    text-align: center;
+}

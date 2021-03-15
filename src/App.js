@@ -1,31 +1,33 @@
 import React, { Component } from 'react';
+import { Route } from 'react-router';
 import ApiService from './components/utils/ApiService';
+
+import HomePage from './views/HomePage';
+import Movies from './views/Movies';
+import MovieDetailsPage from './views/MovieDetailsPage';
+
+import './App.css';
 
 const apiService = new ApiService();
 
 class MovieFinder extends Component {
-  state = {}
+  state = {
+    movies: []
+  };
+
+  componentDidMount() {
+    apiService.fetchPopularFilms().then(movies => {
+      this.setState({movies})
+    });
+  }
 
   render() {
-    // apiService.fetchPopularFilms().then(movies => {
-    //   console.log(movies);
-    // });
-    // apiService.fetchSearchFilms().then(movies => {
-    //   console.log(movies);
-    // });
-    // apiService.fetchFilmsDetails().then(details => {
-    //   console.log(details);
-    // });
-    // apiService.fetchFilmsActors().then(actors => {
-    //   console.log(actors);
-    // });
-    // apiService.fetchFilmsReviews().then(reviews => {
-    //   console.log(reviews);
-    // });
     return (
-      <section>
-        
-      </section>
+      <>
+        <Route exact path="/" render={props => <HomePage {...props} movies={this.state.movies} />} />
+        <Route exact path="/movies" component={Movies} />
+        <Route path="/movies/:movieId" component={MovieDetailsPage} />
+      </>
     );
   };
 };

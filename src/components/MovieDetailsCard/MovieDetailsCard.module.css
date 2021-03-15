@@ -1,0 +1,140 @@
+.movie {
+    display: flex;
+    width: 882px;
+    min-height: 639px;
+    padding: 20px;
+    border-radius: 12px;
+    margin: 40px auto;
+    margin-top: 90px;
+    margin-bottom: 90px;
+    background-color: #fff;
+  
+    filter: drop-shadow(0px 2px 7px #361700);
+}
+
+.movie__cover {
+    width: 426px;
+    height: 100%;
+    margin-right: 30px;
+    border-radius: 5px;
+}
+
+.movie__containerInfo {
+    max-width: 426px;
+}
+
+.movie__title {
+    display: block;
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-size: 30px;
+    font-weight: 500;
+    line-height: 35.16px;
+    color: #000;
+    text-transform: uppercase;
+}
+
+.movie_title_h2 {
+    font-size: 12px;
+    line-height: 16px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.movie__characteristics {
+    list-style: none;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    padding-left: 0px;
+    font-size: 12px;
+    line-height: 16px;
+    font-weight: 500;
+    color: #8c8c8c;
+}
+
+.movie__characteristics li {
+    display: flex;
+}
+
+.movie li:not(:last-child) {
+    padding-bottom: 10px;
+}
+
+.movie_characteristics_title {
+    display: block;
+    width: 80px;
+    margin-right: 30px;
+}
+
+.movie_characteristics_black {
+    max-width: 274px;
+    color: #000;
+}
+
+.movie_characteristics_orange {
+    display: inline-block;
+    text-align: center;
+    color: #fff;
+    border: 0px solid #ff6b01;
+    border-radius: 5px;
+    background-color: #ff6b01;
+    width: 36px;
+    height: 16px;
+}
+
+.movie_characteristics_grey {
+    display: inline-block;
+    text-align: center;
+    color: #000;
+    border: 0px solid #f7f7f7;
+    border-radius: 5px;
+    background-color: #f7f7f7;
+    width: 36px;
+    height: 16px;
+}
+
+.movie__description {
+    font-size: 12px;
+    line-height: 20px;
+    font-weight: 500;
+    color: #000;
+    margin-top: 0px;
+    margin-bottom: 20px;
+}
+
+.buttonContainer {
+    text-align: center;
+}
+
+.buttonContainer :not(:last-child) {
+    margin-right: 20px;
+}
+
+.castLink,
+.reviewsLink {
+    display: inline-block;
+    min-width: 100px;
+    padding: 5px 3px;
+    border: 1px solid transparent;
+    border-radius: 5px;
+    color: #000000;
+    border-color: #000000;
+    background-color: #ffffff;
+    outline: none;
+    text-decoration: none;
+}
+
+.active {
+    color: #ffffff;
+    background-color: #ff6b08;
+    filter: drop-shadow(0 8px 38px #ff6b01);
+    transition: .4s;
+}
+
+.castLink:hover,
+.reviewsLink:hover {
+    color: #ffffff;
+    background-color: #ff6b08;
+    filter: drop-shadow(0 8px 38px #ff6b01);
+    transition: .4s;
+}

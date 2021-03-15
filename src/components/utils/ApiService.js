@@ -4,7 +4,7 @@ export default class ApiService {
       this.API_KEY = '72466121c9676fc22348299f38033287';
       this.query = 'Action';
       this.language = 'en-US';
-      this.movieId = 454283;
+      this.movieId = '';
       this.fetchPageNumber = 1;
       this.pageNumber = 1;
     }

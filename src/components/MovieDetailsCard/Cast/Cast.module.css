@@ -1,0 +1,44 @@
+.castContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 100%;
+    padding-top: 20px;
+    padding-right: 20px;
+    padding-bottom: 20px;
+    padding-left: 20px;
+    border-radius: 5px;
+    margin-top: 30px;
+    box-shadow: 0px 2px 7px #361700;
+}
+
+.castItem {
+    max-width: 105px;
+    padding-top: 5px;
+    padding-right: 5px;
+    padding-bottom: 5px;
+    padding-left: 5px;
+    border-radius: 5px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    box-shadow: 0px 1px 3px #361700;
+    text-align: center;
+}
+
+.castContainer :nth-child(3n) {
+    margin-right: 0;
+}
+
+.profileImage {
+    width: 100%;
+    max-width: 80px;
+    border-radius: 5px;
+}
+
+.actorsName,
+.actorsRole {
+    font-size: 14px;
+    line-height: 1;
+    text-align: left;
+}
