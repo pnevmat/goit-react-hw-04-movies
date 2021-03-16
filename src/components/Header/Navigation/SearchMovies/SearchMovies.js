@@ -15,7 +15,6 @@ class SearchMovies extends Component {
     };
 
     render() {
-        console.log(this.state.inputValue);
         const {onSubmit} = this.props;
         return (
             <>

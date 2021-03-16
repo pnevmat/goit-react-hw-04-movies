@@ -5,10 +5,8 @@ import SearchMovies from './SearchMovies/SearchMovies';
 import styles from './Navigation.module.css';
 
 const Navigation = ({props}) => {
-    console.log("Navigation props", props);
     const navContainerClasses = `${styles.container} ${styles.nav_container}`;
     const {pathname} = props.props.history.location;
-    console.log("Navigation pathname", pathname);
     return (
         <div className={navContainerClasses}>
             <div className={styles.header_container}>
@@ -23,14 +21,18 @@ const Navigation = ({props}) => {
                     }
                     {pathname === "/movies" || pathname === `/movies/${props.props.match.params.movieId}` ?
                         <li className={styles.nav_item}>
-                            <NavLink to={"/"} className={styles.library_link}>Go back</NavLink>
+                            <NavLink to={`${props.props.prevLocation}`} className={styles.library_link}>Go back</NavLink>
                         </li> : null
                     }
                 </ul>
-                <SearchMovies onSubmit={props.onSubmit} />
+                {pathname === "/movies" || pathname === `/movies/${props.props.match.params.movieId}` ? 
+                    <SearchMovies onSubmit={props.onSubmit} /> : null
+                }
             </div>
         </div>
     );
 };
 
 export default Navigation;
+
+// props.props.history.location.state.from

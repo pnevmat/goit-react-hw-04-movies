@@ -35,7 +35,10 @@ class Movies extends Component {
                     props={this.props}
                     onSubmit={this.onSubmit}
                 />
-                <MovieGallery movies={this.state.movies} />
+                <MovieGallery 
+                    movies={this.state.movies}
+                    onChangePath={this.props.onChangePath}
+                />
             </>
         );
     };
