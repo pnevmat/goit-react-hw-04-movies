@@ -6,10 +6,6 @@ import LoaderSpinner from './components/Loader/Loader';
 import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
 import './App.css';
 
-// import HomePage from './views/HomePage';
-// import Movies from './views/Movies';
-// import MovieDetailsPage from './views/MovieDetailsPage';
-
 const HomePage = lazy(() => import('./views/HomePage' /* webpackChunkName: "Home-Page" */));
 const Movies = lazy(() => import('./views/Movies' /* webpackChunkName: "Movies" */));
 const MovieDetailsPage = lazy(() => import('./views/MovieDetailsPage' /* webpackChunkName: "Movie-Details-Page" */));
