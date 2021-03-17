@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Route } from 'react-router';
 import { NavLink } from 'react-router-dom';
 
@@ -6,6 +7,7 @@ import Cast from './Cast/Cast';
 import Reviews from './Reviews/Reviews';
 import Shortid from 'shortid';
 
+import noPoster from './no_poster.png';
 import styles from './MovieDetailsCard.module.css';
 
 const MovieDetailsCard = (props) => {
@@ -56,6 +58,24 @@ const MovieDetailsCard = (props) => {
             </div>
         </div>
     );
+};
+
+MovieDetailsCard.defaultProps = {
+    poster_path: noPoster
+};
+
+MovieDetailsCard.propTypes = {
+    movieDetails: PropTypes.shape({
+        poster_path: PropTypes.string,
+        original_title: PropTypes.string.isRequired,
+        vote_average: PropTypes.number.isRequired,
+        vote_count: PropTypes.number.isRequired,
+        popularity: PropTypes.number.isRequired,
+        genres: PropTypes.arrayOf(
+            PropTypes.object.isRequired
+        ),
+        release_date: PropTypes.string.isRequired
+    })
 };
 
 export default MovieDetailsCard;

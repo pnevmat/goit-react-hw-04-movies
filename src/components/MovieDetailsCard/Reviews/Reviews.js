@@ -7,14 +7,7 @@ const apiService = new ApiService();
 
 class Reviews extends Component {
     state = {
-        reviews: [{
-            author: "Gimly",
-            content: "I actually don't hate Johnny Knoxville, but this was never gonna appeal to me. Cute bear though.↵↵_Final rating:★½: - Boring/disappointing. Avoid where possible._",
-            created_at: "2018-10-04T07:35:08.617Z",
-            id: "5bb5c2ac0e0a2633a70097a5",
-            updated_at: "2018-10-05T14:54:23.490Z",
-            url: "https://www.themoviedb.org/review/5bb5c2ac0e0a2633a70097a5"
-        }]
+        reviews: []
     };
 
     componentDidMount() {

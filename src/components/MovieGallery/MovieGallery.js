@@ -1,7 +1,9 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+import PropTypes from 'prop-types';
 import Shortid from 'shortid';
 
+import noPoster from './no_poster.png';
 import styles from './MovieGallery.module.css';
 
 const MovieGallery = ({movies}) => {
@@ -35,6 +37,25 @@ const MovieGallery = ({movies}) => {
             </div>
         </>
     );
+};
+
+MovieGallery.defaultProps = {
+    poster_path: noPoster
+};
+
+MovieGallery.propTypes = {
+    movies: PropTypes.arrayOf(
+        PropTypes.shape({
+            id: PropTypes.number.isRequired,
+            poster_path: PropTypes.string,
+            title: PropTypes.string.isRequired,
+            genre_ids: PropTypes.arrayOf(
+                PropTypes.number.isRequired
+            ),
+            release_date: PropTypes.string.isRequired
+        })
+    ),
+    onChangePath: PropTypes.func
 };
 
 export default MovieGallery;

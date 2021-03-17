@@ -19,13 +19,16 @@ const Navigation = ({props}) => {
                             <NavLink to="/movies" className={styles.library_link} activeClassName={styles.current}>Movies</NavLink>
                         </li>
                     }
-                    {pathname === "/movies" || pathname === `/movies/${props.props.match.params.movieId}` ?
+                    {pathname === "/movies" 
+                        || pathname === `/movies/${props.props.match.params.movieId}` 
+                        || pathname === `/movies/${props.props.match.params.movieId}/cast` 
+                        || pathname === `/movies/${props.props.match.params.movieId}/reviews` ?
                         <li className={styles.nav_item}>
                             <NavLink to={`${props.props.prevLocation}`} className={styles.library_link}>Go back</NavLink>
                         </li> : null
                     }
                 </ul>
-                {pathname === "/movies" || pathname === `/movies/${props.props.match.params.movieId}` ? 
+                {pathname === "/movies" ? 
                     <SearchMovies onSubmit={props.onSubmit} /> : null
                 }
             </div>
@@ -34,5 +37,3 @@ const Navigation = ({props}) => {
 };
 
 export default Navigation;
-
-// props.props.history.location.state.from

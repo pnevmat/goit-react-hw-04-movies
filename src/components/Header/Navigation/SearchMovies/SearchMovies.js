@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import ErrorMessage from './ErrorMessage/ErrorMessage';
 
 import sprite from './sprite.svg';
@@ -53,5 +54,9 @@ class SearchMovies extends Component {
         );
     };
 };
+
+SearchMovies.propTypes = {
+    onSubmit: PropTypes.func
+}
 
 export default SearchMovies;
