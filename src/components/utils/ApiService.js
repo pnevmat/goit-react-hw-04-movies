@@ -2,7 +2,7 @@ export default class ApiService {
     constructor() {
       this.baseUrl = 'https://api.themoviedb.org/3/';
       this.API_KEY = '72466121c9676fc22348299f38033287';
-      this.query = 'Action';
+      this.query = '';
       this.language = 'en-US';
       this.movieId = '';
       this.fetchPageNumber = 1;

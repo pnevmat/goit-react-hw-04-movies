@@ -61,20 +61,26 @@ const MovieDetailsCard = (props) => {
 };
 
 MovieDetailsCard.defaultProps = {
-    poster_path: noPoster
+    poster_path: noPoster,
+    original_title: 'Film title',
+    vote_average: 'Vote average',
+    vote_count: 'Vote count',
+    popularity: 'Popularity',
+    release_date: 'Release date'
+
 };
 
 MovieDetailsCard.propTypes = {
     movieDetails: PropTypes.shape({
         poster_path: PropTypes.string,
-        original_title: PropTypes.string.isRequired,
-        vote_average: PropTypes.number.isRequired,
-        vote_count: PropTypes.number.isRequired,
-        popularity: PropTypes.number.isRequired,
+        original_title: PropTypes.string,
+        vote_average: PropTypes.number,
+        vote_count: PropTypes.number,
+        popularity: PropTypes.number,
         genres: PropTypes.arrayOf(
             PropTypes.object.isRequired
         ),
-        release_date: PropTypes.string.isRequired
+        release_date: PropTypes.string
     })
 };
 
