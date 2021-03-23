@@ -14,6 +14,7 @@ const apiService = new ApiService();
 
 class MovieFinder extends Component {
   state = {
+    query: '',
     movies: [],
     location: '/'
   };
@@ -21,6 +22,28 @@ class MovieFinder extends Component {
   componentDidMount() {
     apiService.fetchPopularFilms().then(movies => {
       this.setState({movies})
+    });
+  };
+
+  componentDidUpdate(prevProps, prevState) {
+    const {query, location, movies} = this.state;
+    if (query !== '' && query !== prevState.query) {
+        apiService.queryValue = this.state.query;
+        apiService.fetchSearchFilms().then(movies => {
+            this.setState({movies});
+        });
+    } else if (query === '' && location === '/movies' && movies.length !== 0) {
+      this.setState({movies: []});
+    } else if (query !== '' && location === '/') {
+      apiService.fetchPopularFilms().then(movies => {
+        this.setState({movies})
+      });
+    };
+};
+
+  onSubmit = (value) => {
+    this.setState({
+      query: value,
     });
   };
 
@@ -42,7 +65,9 @@ class MovieFinder extends Component {
           <Route exact path="/movies" render={props =>
             <Movies 
               {...props}
-              onChangePath={this.onChangePath} 
+              onChangePath={this.onChangePath}
+              onSubmit={this.onSubmit}
+              movies={this.state.movies}
             />} 
           />
           <Route path="/movies/:movieId" render={props =>
